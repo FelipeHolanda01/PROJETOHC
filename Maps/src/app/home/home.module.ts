@@ -1,13 +1,22 @@
-import{Component,ViewChild, ElementRef} from '@angular/core';
-import{NavController, Platform} from'@ionic/angular';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {IonicModule} from '@ionic/angular';
+import {RouterModule} from '@angular/router';
 
+import {HomePage} from './home.page';
 
-@Component({
-  selector : 'page-home',
-  templateUrl:'home.page.html'
+@NgModule({
+    imports: [
+      CommonModule,
+      FormsModule,
+      IonicModule,
+      RouterModule.forChild([
+        { path:' ',
+        component: HomePage
+      }       
+      ])
+    ],
+  declarations: [HomePage]
 })
-export class HomePage{
-  constructor(public navCtrl:NavController){
-
-  }
-}
+  export class HomePageModule {}
